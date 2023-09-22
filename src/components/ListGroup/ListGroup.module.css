@@ -1,0 +1,11 @@
+.listGroup {
+    list-style: none;
+}
+
+.listContainer {
+    background-color: aqua;
+}
+
+.listItemSelected {
+    color: pink;
+}

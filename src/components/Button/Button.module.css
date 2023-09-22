@@ -1,0 +1,30 @@
+.btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.btnPrimary {
+    background-color: blue;
+    color: white;
+}
+
+.btnSecondary {
+    background-color: grey;
+    color: deeppink;
+}
+
+.btnSuccess {
+    background-color: green;
+    color: black;
+}
+
+.btnDanger {
+    background-color: red;
+    color: black;
+}
+
+.btnWarning {
+    background-color: orange;
+    color: black;
+}
+
