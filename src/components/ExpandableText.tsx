@@ -11,9 +11,9 @@ const ExpandableText = ({ maxChars=45, children }: Props) => {
   return (
     <p>
       {more ? (
-        <div>{children}&nbsp;<button onClick={() => setMore(false)}>Less</button></div>
+        <span>{children}&nbsp;<button onClick={() => setMore(false)}>Less</button></span>
       ) : (
-        <div>{children.substring(0, maxChars)}...&nbsp;<button onClick={() => setMore(true)}>More</button></div>
+        <span>{children.substring(0, maxChars)}...&nbsp;<button onClick={() => setMore(true)}>More</button></span>
       )}
     </p>
   );

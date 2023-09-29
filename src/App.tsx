@@ -7,6 +7,10 @@ import ListGroup from "./components/ListGroup";
 import { AiFillAlert, AiFillPlaySquare } from "react-icons/ai";
 import Like from "./components/Like/Like";
 import ExpandableText from "./components/ExpandableText";
+import Form from "./components/Form";
+import ExpenseTracker from "./components/ExpenseTracker";
+import ProductList from "./components/ProductList";
+import UsersList from "./components/UsersList";
 
 function App() {
   // Listgroup Example
@@ -66,6 +70,9 @@ function App() {
       ),
     });
   };
+
+  // Product list example
+  const [category, setCategory] = useState("");
 
   return (
     <div>
@@ -130,7 +137,9 @@ function App() {
       <div>
         items:{" "}
         {cart.items.map((item) => (
-          <p key={item.id}>id: {item.id}, title: {item.title}, quantity: {item.quantity}</p>
+          <p key={item.id}>
+            id: {item.id}, title: {item.title}, quantity: {item.quantity}
+          </p>
         ))}
       </div>
       <Button colour="yellow" onButtonClicked={() => handleCartClick()}>
@@ -139,7 +148,40 @@ function App() {
 
       <hr />
       <h1>Expandable Text Example</h1>
-      <ExpandableText maxChars={45}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, dolor illum! Dolorem veritatis quae aut provident facere nobis numquam, impedit eligendi molestias consequuntur, quos vel deserunt, magnam pariatur amet neque.</ExpandableText>
+      <ExpandableText maxChars={45}>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima, dolor
+        illum! Dolorem veritatis quae aut provident facere nobis numquam,
+        impedit eligendi molestias consequuntur, quos vel deserunt, magnam
+        pariatur amet neque.
+      </ExpandableText>
+
+      <hr />
+      <h1>Form Example</h1>
+      <Form />
+
+      <hr />
+      <h1>Expense Tracker Example</h1>
+      <ExpenseTracker />
+
+      <hr />
+      <h1>Product List Example</h1>
+      <select
+        name=""
+        id=""
+        className="form-select"
+        onChange={(event) => setCategory(event.target.value)}
+      >
+        <option value=""></option>
+        <option value="Clothing">Clothing</option>
+        <option value="Household">Household</option>
+      </select>
+      <p>{category}</p>
+      <ProductList category={category}/>
+
+      <hr />
+      <h1>Users List Example</h1>
+      <UsersList/>
+
 
     </div>
   );
